@@ -6,10 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Remove="Day01\**" />
-  </ItemGroup>
-
-  <ItemGroup>
+    <Compile Include="Day01\Day01.fs" />
     <Compile Include="AoC.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
