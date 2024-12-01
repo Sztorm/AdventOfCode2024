@@ -25,13 +25,8 @@ let part2 (input: string array): int64 =
         )
     let occurenceCountsByNumber = 
         inputPairs
-        |> Array.fold (fun acc (_, right) -> 
-            let occurenceCount = 
-                match acc |> Map.tryFind right with
-                | Some count -> count
-                | None -> 0
-            acc |> Map.add right (occurenceCount + 1)
-        ) Map.empty
+        |> Array.countBy (fun (_, right) ->  right)
+        |> Map
     inputPairs
     |> Array.sumBy (fun (left, _) ->
         match occurenceCountsByNumber |> Map.tryFind left with
