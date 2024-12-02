@@ -6,11 +6,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Day01\Day01.fs" />
     <Compile Include="AoC.fs" />
+    <Compile Include="Day02\Day02.fs" />
+    <Compile Include="Day01\Day01.fs" />
     <Compile Include="Program.fs" />
   </ItemGroup>
-
-  <ItemGroup />
 
 </Project>
