@@ -43,8 +43,8 @@ let part2(input: string array): int64 =
         |> Seq.toArray
     
     let enabledMuls =
-        let rec iter i isEnabled (products: (int64 * int64) list) =
-            if i < (Array.length instructions) then
+        let rec iter i isEnabled products =
+            if i < Array.length instructions then
                 let instruction = instructions[i]
 
                 match (isEnabled, instruction) with
