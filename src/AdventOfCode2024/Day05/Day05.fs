@@ -40,5 +40,5 @@ let part2 (input: string array): int64 =
     input
     |> unsortedAndSortedUpdatesPair
     ||> Array.fold2 (fun acc l r ->
-        acc + int64 (if (l <> r) then r[Array.length l / 2] else 0)
+        acc + int64 (if (l <> r) then r[Array.length r / 2] else 0)
     ) 0L

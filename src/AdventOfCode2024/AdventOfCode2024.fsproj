@@ -6,7 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Include="Extensions\Array2D.fs" />
     <Compile Include="AoC.fs" />
+    <Compile Include="Day06\Day06.fs" />
     <Compile Include="Day05\Day05.fs" />
     <Compile Include="Day04\Day04.fs" />
     <Compile Include="Day03\Day03.fs" />
