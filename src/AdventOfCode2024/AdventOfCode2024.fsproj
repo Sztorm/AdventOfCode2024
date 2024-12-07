@@ -7,6 +7,7 @@
 
   <ItemGroup>
     <Compile Include="AoC.fs" />
+    <Compile Include="Day05\Day05.fs" />
     <Compile Include="Day04\Day04.fs" />
     <Compile Include="Day03\Day03.fs" />
     <Compile Include="Day02\Day02.fs" />
