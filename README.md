@@ -8,9 +8,9 @@ Solutions for the 2024 edition of **[Advent of Code](https://adventofcode.com/20
 - [Day 3](src/AdventOfCode2024/Day03/Day03.fs) ⭐⭐
 - [Day 4](src/AdventOfCode2024/Day04/Day04.fs) ⭐⭐
 - [Day 5](src/AdventOfCode2024/Day05/Day05.fs) ⭐⭐
-- [Day 6](src/AdventOfCode2024/Day06/Day06.fs) ⭐
+- [Day 6](src/AdventOfCode2024/Day06/Day06.fs) ⭐⭐
 
-Collected stars: **11**
+Collected stars: **12**
 
 ## License
 [MIT](https://github.com/Sztorm/AdventOfCode2024/blob/master/LICENSE.txt)
