@@ -1,6 +1,6 @@
 ﻿module Day05
 
-let part1 (input: string array): int64 =
+let unsortedAndSortedUpdatesPair (input: string array) =
     let pageOrderingRules =
         input
         |> Array.takeWhile (fun s -> s.Length <> 0)
@@ -28,6 +28,17 @@ let part1 (input: string array): int64 =
         )
         
     (updates, sortedUpdates)
-    ||> Array.fold2 (fun acc l r -> acc + int64 (if (l = r) then l[Array.length l / 2] else 0)) 0L
 
-let part2 (input: string array): int64 = 0
+let part1 (input: string array): int64 =
+    input
+    |> unsortedAndSortedUpdatesPair
+    ||> Array.fold2 (fun acc l r ->
+        acc + int64 (if (l = r) then l[Array.length l / 2] else 0)
+    ) 0L
+
+let part2 (input: string array): int64 =
+    input
+    |> unsortedAndSortedUpdatesPair
+    ||> Array.fold2 (fun acc l r ->
+        acc + int64 (if (l <> r) then r[Array.length l / 2] else 0)
+    ) 0L
