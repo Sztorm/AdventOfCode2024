@@ -39,4 +39,37 @@ let part1 (input: string array): int64 =
 
     iter 0 0 0
 
-let part2 (input: string array): int64 = 0
+let part2 (input: string array): int64 =
+    let wordsArray = ForgivingArray2D(Array.length input, String.length input[0], '.')
+    input
+    |> Array.iteri (fun i line -> wordsArray.SetRow(i, line))
+
+    let countXmas r c =
+        if wordsArray[r, c] = 'A' then
+            let ul = wordsArray[r - 1, c - 1]
+            let ur = wordsArray[r - 1, c + 1]
+            let dl = wordsArray[r + 1, c - 1]
+            let dr = wordsArray[r + 1, c + 1]
+
+            match (ul, ur, dl, dr) with
+            | 'M', 'S', 
+              'M', 'S'
+            | 'S', 'M',
+              'S', 'M'
+            | 'M', 'M',
+              'S', 'S'
+            | 'S', 'S',
+              'M', 'M' -> 1
+            | _ -> 0
+        else 0
+
+    let rec iter r c result =
+        if r < wordsArray.Rows then
+            if c < wordsArray.Columns then
+                iter r (c + 1) (result + countXmas r c)
+            else
+                iter (r + 1) 0 result
+        else
+            result
+
+    iter 0 0 0
