@@ -6,9 +6,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Include="Extensions\Array.fs" />
-    <Compile Include="Extensions\Array2D.fs" />
+    <Compile Include="Modules\ForgivingArray2D.fs" />
+    <Compile Include="Modules\Array.fs" />
+    <Compile Include="Modules\Array2D.fs" />
     <Compile Include="AoC.fs" />
+    <Compile Include="Day08\Day08.fs" />
     <Compile Include="Day07\Day07.fs" />
     <Compile Include="Day06\Day06.fs" />
     <Compile Include="Day05\Day05.fs" />

@@ -1,6 +1,6 @@
 ﻿module Day04
 
-open AoC
+open ForgivingArray2D
 
 let part1 (input: string array): int64 =
     let wordsArray = ForgivingArray2D(Array.length input, String.length input[0], '.')
