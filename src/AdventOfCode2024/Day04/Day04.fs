@@ -3,9 +3,8 @@
 open ForgivingArray2D
 
 let part1 (input: string array): int64 =
-    let wordsArray = ForgivingArray2D(Array.length input, String.length input[0], '.')
-    input
-    |> Array.iteri (fun i line -> wordsArray.SetRow(i, line))
+    let wordsArray =
+        ForgivingArray2D.init input.Length input[0].Length '.' (fun r c -> input[r][c])
 
     let countXmasInAllDirections r c =
         let matchMas a0 a1 a2 =
@@ -40,9 +39,8 @@ let part1 (input: string array): int64 =
     iter 0 0 0
 
 let part2 (input: string array): int64 =
-    let wordsArray = ForgivingArray2D(Array.length input, String.length input[0], '.')
-    input
-    |> Array.iteri (fun i line -> wordsArray.SetRow(i, line))
+    let wordsArray =
+        ForgivingArray2D.init input.Length input[0].Length '.' (fun r c -> input[r][c])
 
     let countXmas r c =
         if wordsArray[r, c] = 'A' then
