@@ -1,7 +1,5 @@
 ﻿module Day04
 
-open ForgivingArray2D
-
 let part1 (input: string array): int64 =
     let wordsArray =
         ForgivingArray2D.init input.Length input[0].Length '.' (fun r c -> input[r][c])

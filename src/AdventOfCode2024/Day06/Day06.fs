@@ -1,10 +1,6 @@
 ﻿module Day06
 
-type Direction =
-    | Up
-    | Left
-    | Down
-    | Right
+type Direction = Up | Left | Down | Right
 
 let part1 (input: string array): int64 =
     let map = input |> array2D
