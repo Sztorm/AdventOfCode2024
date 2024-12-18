@@ -59,8 +59,20 @@ type ForgivingArray2DExtensions =
                 it[index, i] <- row[i]
         else ()
 
+let tryFindIndex (predicate: 'a -> bool) (array: 'a ForgivingArray2D) =
+    let rec loop r c =
+        if r < array.Rows then
+            if c < array.Columns then
+                if predicate array[r, c] then
+                    Some (r, c)
+                else
+                    loop r (c + 1)
+            else
+                loop (r + 1) 0
+        else None
+    loop 0 0
 
-let inline sumBy ([<InlineIfLambda>] projection: ('a -> 'b)) (array: 'a ForgivingArray2D): 'b =
+let inline sumBy ([<InlineIfLambda>] projection: 'a -> 'b) (array: 'a ForgivingArray2D): 'b =
     let rec loop r c sum =
         if r < array.Rows then
             if c < array.Columns then
